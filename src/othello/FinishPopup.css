@@ -1,0 +1,58 @@
+/* ポップアップ */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: .6s;
+}
+
+.popup.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.totalCount {
+    minWidth: 64;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.winner_img {
+    text-align: center;
+}
+
+.winner_img>img {
+    width: 100px !important
+}
+
+.black-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.close-btn i {
+    font-size: 20px;
+    color: #333;
+}

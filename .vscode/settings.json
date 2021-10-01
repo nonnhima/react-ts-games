@@ -1,0 +1,10 @@
+{
+    "debug.javascript.usePreview": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+}
+
+
+

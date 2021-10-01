@@ -1,0 +1,262 @@
+body.memoryGame {
+    font-family: "arial";
+    background-color: #fff;
+    padding: 0px 30px 30px;
+    width: 900px;
+    margin: 0px auto;
+}
+
+body.memoryGame .scores {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+
+/* ポップアップ */
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: .6s;
+}
+
+.popup.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding: 50px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.close-btn i {
+    font-size: 20px;
+    color: #333;
+}
+
+.black-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+/* カードcss */
+
+.flip-boards {
+    position: relative;
+}
+
+.flip-boards .board {
+    float: left;
+    margin: 15px;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.flip-boards .board div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-boards .board .front {
+    background: url("./img/front.png");
+}
+
+.flip-boards .board .front:hover {
+    opacity: 0.8;
+}
+
+.flip-boards .board.clicked {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-boards .board.paired {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-boards .board .flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+/* ペア後にカードがキラーンと光るアニメーション */
+
+.paired div.flipped {
+    overflow: hidden;
+}
+
+.paired div.flipped::after {
+    content: "";
+    height: 100%;
+    width: 30px;
+    position: absolute;
+    top: -180px;
+    left: 0;
+    background-color: #fff;
+    opacity: 0;
+    -webkit-transform: rotate(45deg);
+    -webkit-animation: reflection 1s ease-in-out;
+}
+
+@keyframes reflection {
+    0% {
+        -webkit-transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+    80% {
+        -webkit-transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    81% {
+        -webkit-transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(50) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+
+/* タイマー */
+
+.timer_content {
+    background-color: #37474f;
+    color: white;
+    width: 350px;
+    margin: 30px auto 30px;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+/* 成績表 */
+
+body.memoryGame table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+body.memoryGame table tr {
+    border-bottom: solid 1px #eee;
+}
+
+body.memoryGame .score {
+    line-height: 0.95em;
+    color: transparent;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 60px;
+}
+
+.S {
+    background: linear-gradient(0deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
+    -webkit-background-clip: text;
+}
+
+.A {
+    background: linear-gradient(0deg, #0277BD 0%, #4FC3F7 45%, #E1F5FE 70%, #4FC3F7 85%, #0277BD 90% 100%);
+    -webkit-background-clip: text;
+}
+
+.B {
+    background: linear-gradient(0deg, #388E3C 0%, #388E3C 55%, #b0d683 70%, #388E3C 85%, #388E3C 90% 100%);
+    -webkit-background-clip: text;
+}
+
+.C {
+    background: linear-gradient(0deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
+    -webkit-background-clip: text;
+}
+
+th {
+    font-size: 12px;
+}
+
+body.memoryGame table th,
+body.memoryGame table td {
+    text-align: center;
+    width: 25%;
+    padding: 15px 0;
+}
+
+p.attention {
+    font-size: 13px;
+    color: #bdbdbd;
+}
+
+@keyframes horizontal {
+    0% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes vertical {
+    0% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,39 @@
+div.empty {
+    background: url("./img/empty.png");
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+div.empty_hint {
+    background: url("./img/empty_hint.png");
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+div.empty_hint:hover {
+    opacity: 0.5;
+}
+
+div.empty:hover {
+    opacity: 0.5;
+}
+
+div.black {
+    background: url("./img/black.png");
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+div.white {
+    background: url("./img/white.png");
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+div.is_enemy {
+    pointer-events: none;
+}

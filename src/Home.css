@@ -1,0 +1,61 @@
+h1 {
+    text-align: center;
+    font-size: 18px;
+    height: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+.chooseTxt {
+    text-align: center;
+}
+
+div.select_area {
+    /* padding: 270px 300px 0 300px; */
+    margin: 250px auto 0 auto;
+    /* text-align: center; */
+    width: 80%;
+}
+
+a.select_btn {
+    display: block;
+    /* font-size: 5px; */
+    margin: 0 auto 40px auto;
+    padding: 1em 5em;
+    width: 200px;
+    /* padding: 0.8em; */
+    text-align: center;
+    text-decoration: none;
+    color: #EC407A;
+    border: 2px solid #EC407A;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+a.select_btn:hover {
+    background: #EC407A;
+    color: #fff;
+}
+
+.btn_area {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    margin-top: 23px;
+    display: inline-block;
+    width: 140px;
+    padding: 0.4em 0.7em;
+    text-decoration: none;
+    color: #fff;
+    background: #212121;
+    border-radius: 4px;
+    transition: .0s;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
