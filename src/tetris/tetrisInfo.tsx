@@ -42,7 +42,19 @@ export enum BlockType {
     Snake = 'snake',
     // 凸型
     Convex = 'convex',
+    // デフォルト
+    Default = 'default'
 }
+
+export enum AdditionalClassType {
+    // これから行が削除されることが分かりやすいように、行の色を変える
+    Delate = 'will-delate',
+    // ブロックを置くことができる最も低いpositionを白い外枠で囲み、表示する
+    MaxBottom = 'max_bottom',
+    // デフォルトは''空文字
+    Default = ''
+}
+
 
 // ブロックの全タイプをまとめた配列
 export const block_types = [
@@ -92,15 +104,17 @@ export const convex_position = [
 
 // ブロックのポジション情報を保有する連想配列
 export const position = {
-    stick: stick_position,
-    L: L_position,
-    thumb: thumb_position,
-    snake: snake_position,
-    convex: convex_position,
-};
+    [BlockType.Stick]: stick_position,
+    [BlockType.L]: L_position,
+    [BlockType.Thumb]: thumb_position,
+    [BlockType.Snake]: snake_position,
+    [BlockType.Convex]: convex_position,
+    // 型エラーになるのでデフォルトを追加
+    [BlockType.Default]: [[],[],[],[]],
+}
 
 // 左右に動かす場合のポジションの調整値
 export enum AdjustPosition {
-    Left = -1,
-    Right = 1,
+    Left = 1,
+    Right = -1,
 }

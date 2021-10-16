@@ -17,7 +17,7 @@ export const checkArray = (activeColor: StoneColor, check_array: number[], block
 
     for (let i = 0; i < check_array.length; i++) {
         let check_id = check_array[i]
-        // blockIDsの配列の半番目にcheck_idが入っているか、数を返す
+        // blockIDsの配列の何番目にcheck_idが入っているか、数を返す
         let blockIDsIdx = blockIDs.findIndex(blockID => blockID === check_id)
         const block = blockInfo[blockIDsIdx]
         const enemyColor = getEnemyColor(activeColor)
